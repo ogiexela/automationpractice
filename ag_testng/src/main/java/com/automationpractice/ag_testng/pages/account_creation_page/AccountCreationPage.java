@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import com.automationpractice.ag_testng.data_types.AccountRegistrationInfo;
 import com.automationpractice.ag_testng.pages.base_page.BasePage;
 
 import ag.framework.browser.Browser;
@@ -50,6 +51,7 @@ public class AccountCreationPage extends BasePage {
 		}
 
 		WebElement field = getClickableElement(By.cssSelector("#email"));
+		field.clear();
 		field.sendKeys(value);
 		return this;
 	}

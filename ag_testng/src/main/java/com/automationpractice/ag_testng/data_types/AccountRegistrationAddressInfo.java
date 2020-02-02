@@ -1,4 +1,4 @@
-package com.automationpractice.ag_testng.pages.account_creation_page;
+package com.automationpractice.ag_testng.data_types;
 
 public class AccountRegistrationAddressInfo {
 
