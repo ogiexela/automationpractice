@@ -1,4 +1,4 @@
-### Tests for account registration form
+### Tests for account registration form (for Q2 of assignment)
 
 Given I am on the registration page  
 Then I see the following fields marked as required  
