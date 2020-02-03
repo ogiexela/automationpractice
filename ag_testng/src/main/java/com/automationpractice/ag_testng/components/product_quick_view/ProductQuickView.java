@@ -8,8 +8,6 @@ import ag.framework.browser.Browser;
 
 public class ProductQuickView {
 	
-	public static By QUICK_VIEW_FRAME_SELECTOR = By.cssSelector(".fancybox-iframe");
-	
 	private Browser browser;
 	
 	public ProductQuickView(Browser browser) {

@@ -7,6 +7,7 @@ import ag.framework.browser.Browser;
 
 public class CartUpdatePopup {
 	private Browser browser;
+	private String LAYER_CART_LOCATOR = "#layer_cart";
 	
 	public CartUpdatePopup(Browser browser) {
 		this.browser = browser;
@@ -19,11 +20,11 @@ public class CartUpdatePopup {
 	}
 	
 	public WebElement getCartUpdatePopup() {
-		return this.browser.getElement(By.cssSelector("#layer_cart"));
+		return this.browser.getElement(By.cssSelector(LAYER_CART_LOCATOR));
 	}
 	
 	public WebElement getContinueShoppingButton() {
-		return this.browser.getClickableElement(By.cssSelector("#layer_cart [title=\"Continue shopping\"]"));
+		return this.browser.getClickableElement(By.cssSelector(LAYER_CART_LOCATOR + " [title=\"Continue shopping\"]"));
 	}
 
 }

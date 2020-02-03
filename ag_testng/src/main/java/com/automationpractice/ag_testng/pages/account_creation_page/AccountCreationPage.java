@@ -15,6 +15,17 @@ public class AccountCreationPage extends BasePage {
 		super(browser);
 	}
 
+	private AccountCreationPage setTextFieldValue(String cssLocator, String value, Boolean clearFirst) {
+		WebElement field = getClickableElement(By.cssSelector(cssLocator));
+		
+		if (clearFirst) {
+			field.clear();
+		}
+		
+		field.sendKeys(value);
+		return this;
+	}
+	
 	public AccountCreationPage setTitle(String title) {
 		if (title == null) {
 			return this;
@@ -34,14 +45,12 @@ public class AccountCreationPage extends BasePage {
 	}
 
 	public AccountCreationPage setCustomerFirstName(String value) {
-		WebElement field = getClickableElement(By.cssSelector("#customer_firstname"));
-		field.sendKeys(value);
+		setTextFieldValue("#customer_firstname", value, false);
 		return this;
 	}
 
 	public AccountCreationPage setCustomerLastName(String value) {
-		WebElement field = getClickableElement(By.cssSelector("#customer_lastname"));
-		field.sendKeys(value);
+		setTextFieldValue("#customer_lastname", value, false);
 		return this;
 	}
 
@@ -50,15 +59,12 @@ public class AccountCreationPage extends BasePage {
 			return this;
 		}
 
-		WebElement field = getClickableElement(By.cssSelector("#email"));
-		field.clear();
-		field.sendKeys(value);
+		setTextFieldValue("#email", value, true);
 		return this;
 	}
 
 	public AccountCreationPage setPassword(String value) {
-		WebElement field = getClickableElement(By.cssSelector("#passwd"));
-		field.sendKeys(value);
+		setTextFieldValue("#passwd", value, false);
 		return this;
 	}
 
@@ -97,8 +103,7 @@ public class AccountCreationPage extends BasePage {
 			return this;
 		}
 
-		WebElement field = getClickableElement(By.cssSelector("#firstname"));
-		field.sendKeys(value);
+		setTextFieldValue("#firstname", value, true);
 		return this;
 	}
 
@@ -107,97 +112,87 @@ public class AccountCreationPage extends BasePage {
 			return this;
 		}
 
-		WebElement field = getClickableElement(By.cssSelector("#lastname"));
-		field.sendKeys(value);
+		setTextFieldValue("#lastname", value, true);
 		return this;
 	}
-	
+
 	public AccountCreationPage setAddressCompany(String value) {
 		if (value == null) {
 			return this;
 		}
 
-		WebElement field = getClickableElement(By.cssSelector("#company"));
-		field.sendKeys(value);
+		setTextFieldValue("#company", value, false);
 		return this;
 	}
-	
+
 	public AccountCreationPage setAddressLine1(String value) {
-		WebElement field = getClickableElement(By.cssSelector("#address1"));
-		field.sendKeys(value);
+		setTextFieldValue("#address1", value, false);
 		return this;
 	}
-	
+
 	public AccountCreationPage setAddressLine2(String value) {
 		if (value == null) {
 			return this;
 		}
-		
-		WebElement field = getClickableElement(By.cssSelector("#address2"));
-		field.sendKeys(value);
+
+		setTextFieldValue("#address2", value, false);
 		return this;
 	}
-	
+
 	public AccountCreationPage setAddressCity(String value) {
-		WebElement field = getClickableElement(By.cssSelector("#city"));
-		field.sendKeys(value);
+		setTextFieldValue("#city", value, false);
 		return this;
 	}
-	
+
 	public AccountCreationPage setAddressState(String value) {
 		Select state = new Select(getElement(By.id("id_state")));
 		state.selectByVisibleText(value);
 		return this;
 	}
-	
+
 	public AccountCreationPage setAddressPostcode(String value) {
-		WebElement field = getClickableElement(By.cssSelector("#postcode"));
-		field.sendKeys(value);
+		setTextFieldValue("#postcode", value, false);
 		return this;
 	}
-	
+
 	public AccountCreationPage setAddressCountry(String value) {
 		Select state = new Select(getElement(By.id("id_country")));
 		state.selectByVisibleText(value);
 		return this;
 	}
-	
+
 	public AccountCreationPage setAddressAdditionalInfo(String value) {
 		if (value == null) {
 			return this;
 		}
-		
-		WebElement field = getClickableElement(By.cssSelector("#other"));
-		field.sendKeys(value);
+
+		setTextFieldValue("#other", value, false);
 		return this;
 	}
-	
+
 	public AccountCreationPage setAddressHomePhone(String value) {
 		if (value == null) {
 			return this;
 		}
-		
-		WebElement field = getClickableElement(By.cssSelector("#phone"));
-		field.sendKeys(value);
+
+		setTextFieldValue("#phone", value, false);
 		return this;
 	}
-	
+
 	public AccountCreationPage setAddressMobilePhone(String value) {
-		WebElement field = getClickableElement(By.cssSelector("#phone_mobile"));
-		field.sendKeys(value);
+		setTextFieldValue("#phone_mobile", value, false);
 		return this;
 	}
-	
+
 	public AccountCreationPage setAddressAlias(String value) {
 		if (value == null) {
 			return this;
 		}
-		
-		WebElement field = getClickableElement(By.cssSelector("#alias"));
-		field.sendKeys(value);
+
+		setTextFieldValue("#alias", value, false);
 		return this;
 	}
-	
+
 	public AccountCreationPage clickRegisterAccount() {
 		WebElement submitAccount = getClickableElement(By.cssSelector("#submitAccount"));
 		submitAccount.click();

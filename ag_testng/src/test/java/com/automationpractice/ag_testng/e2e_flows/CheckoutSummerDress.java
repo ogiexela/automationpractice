@@ -2,7 +2,9 @@ package com.automationpractice.ag_testng.e2e_flows;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 
 import com.automationpractice.ag_testng.base_test.BaseTest;
@@ -46,9 +48,7 @@ public class CheckoutSummerDress extends BaseTest {
 		
 		productListPage.openProductQuickView(DRESS_NAME);
 		
-		browser().switchToFrame(ProductQuickView.QUICK_VIEW_FRAME_SELECTOR);
-		
-		ProductQuickView productQuickView = new ProductQuickView(browser());
+		ProductQuickView productQuickView = productListPage.switchToProductQuickView();
 		
 		assertions().shouldBeTrue(driver -> DRESS_NAME.equals(productQuickView.getProductName()));
 		
@@ -56,7 +56,7 @@ public class CheckoutSummerDress extends BaseTest {
 			.selectSize(DRESS_SIZE)
 			.addToCart();
 		
-		browser().switchToDefaultContent();
+		productListPage.switchToDefaultContent();
 		
 		CartUpdatePopup cartUpdatePopup = new CartUpdatePopup(browser());
 		cartUpdatePopup.continueShopping();

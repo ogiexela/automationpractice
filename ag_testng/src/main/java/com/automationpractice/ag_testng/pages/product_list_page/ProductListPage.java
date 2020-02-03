@@ -55,8 +55,8 @@ public class ProductListPage extends BasePage {
 	}
 	
 	public ProductListPage openProductQuickView(String productName) {
-		getProductByName("Printed Chiffon Dress").hoverOver();
-		getProductByName("Printed Chiffon Dress").openQuickView();
+		getProductByName(productName).hoverOver();
+		getProductByName(productName).openQuickView();
 		return this;
 	}
 }

@@ -15,7 +15,7 @@ public class BaseTest {
 	@BeforeClass
 	@Parameters({"browserName", "timeout", "pollInterval", "pageURL"})
 	public void setUp(
-			@Optional("firefox") String browsername,
+			@Optional("chrome") String browsername,
 			@Optional("30") int timeout,
 			@Optional("3") int pollInterval,
 			@Optional("http://automationpractice.com") String pageURL

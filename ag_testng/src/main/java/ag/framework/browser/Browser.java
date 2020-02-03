@@ -8,11 +8,14 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Browser {
 	private WebDriver driver;
@@ -22,10 +25,16 @@ public class Browser {
 	public Browser(String type, int timeout, int polling) {
 		switch (type.toLowerCase()) {
 		case "firefox":
+			WebDriverManager.firefoxdriver().setup();
 			this.driver = new FirefoxDriver();
 			break;
 		case "chrome":
+			WebDriverManager.chromedriver().setup();
 			this.driver = new ChromeDriver();
+			break;
+		case "edge":
+			WebDriverManager.edgedriver().setup();
+			this.driver = new EdgeDriver();
 			break;
 		default:
 			throw new RuntimeException("Unknown browser type: " + type);
@@ -90,7 +99,7 @@ public class Browser {
 	}
 	
 	public Browser switchToFrame(By frameSelector) {
-		this.driver.switchTo().frame(this.getElement(frameSelector));
+		this.wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameSelector));
 		
 		return this;
 	}
