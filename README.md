@@ -11,7 +11,7 @@ e2e automation
 
 ### Maven
 1. From a terminal ```cd ag_test```
-1. ```mnv test```
+1. ```mvn test```
 
 ### TestNg
 1. Using eclipse select desired test case or testng.xml file and run as testng
