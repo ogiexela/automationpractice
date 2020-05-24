@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/ogiexela/automationpractice.svg?branch=master)](https://travis-ci.org/ogiexela/automationpractice)
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/069a5593362b0810df2a/maintainability)](https://codeclimate.com/github/ogiexela/automationpractice/maintainability)
 # automationpractice
 e2e automation
 
