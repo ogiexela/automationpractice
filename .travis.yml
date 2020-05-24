@@ -1,8 +1,6 @@
 language: java
-sudo: false
 dist: xenial
 addons:
   chrome: stable
-  code_climate: true
 before_script: cd ./ag_testng
 script: mvn clean verify
