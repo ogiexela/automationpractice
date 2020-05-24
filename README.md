@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ogiexela/automationpractice.svg?branch=master)](https://travis-ci.org/ogiexela/automationpractice)
+
 # automationpractice
 e2e automation
 
