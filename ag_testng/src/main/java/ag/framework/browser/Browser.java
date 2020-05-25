@@ -18,7 +18,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -40,11 +39,7 @@ public class Browser {
 			break;
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
-			ChromeOptions chromeOptions = new ChromeOptions();
-			
-			chromeOptions.addArguments("--headless");
-			
-			this.driver = new ChromeDriver(chromeOptions);
+			this.driver = new ChromeDriver();
 			break;
 		case "chrome-headless":
 			WebDriverManager.chromedriver().setup();
