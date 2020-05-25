@@ -2,12 +2,9 @@ package com.automationpractice.ag_testng.e2e_flows;
 
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 
-import com.automationpractice.ag_testng.base_test.BaseTest;
 import com.automationpractice.ag_testng.components.cart_update_popup.CartUpdatePopup;
 import com.automationpractice.ag_testng.components.product_quick_view.ProductQuickView;
 import com.automationpractice.ag_testng.components.shopping_cart.ShoppingCart;
@@ -23,6 +20,8 @@ import com.automationpractice.ag_testng.pages.product_list_page.ProductListPage;
 import com.automationpractice.ag_testng.pages.shipping_page.ShippingPage;
 import com.automationpractice.ag_testng.pages.shopping_cart_summary_page.ShoppingCartSummaryPage;
 import com.automationpractice.ag_testng.pages.signin_page.SigninPage;
+
+import ag.base_test.BaseTest;
 
 public class CheckoutSummerDress extends BaseTest {
 

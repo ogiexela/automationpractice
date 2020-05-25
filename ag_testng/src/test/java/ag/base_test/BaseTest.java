@@ -1,13 +1,16 @@
-package com.automationpractice.ag_testng.base_test;
+package ag.base_test;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import ag.framework.assertions.Assertions;
 import ag.framework.browser.Browser;
+import ag.testng.ScreenshotListener;
 
+@Listeners(ScreenshotListener.class)
 public class BaseTest {
 	private Browser browser;
 	private Assertions assertions;
