@@ -40,7 +40,11 @@ public class Browser {
 			break;
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
-			this.driver = new ChromeDriver();
+			ChromeOptions chromeOptions = new ChromeOptions();
+			
+			chromeOptions.addArguments("--headless");
+			
+			this.driver = new ChromeDriver(chromeOptions);
 			break;
 		case "chrome-headless":
 			WebDriverManager.chromedriver().setup();
